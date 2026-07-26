@@ -10,7 +10,7 @@ function Header() {
 
   const closeMenu = useCallback(() => {
     setIsMenuOpen(false)
-    requestAnimationFrame(() => menuTriggerRef.current?.focus())
+    setTimeout(() => menuTriggerRef.current?.focus(), 0)
   }, [])
 
   return (
@@ -38,7 +38,12 @@ function Header() {
             <a className="site-header__link" href="#/info" aria-current={route === '/info' ? 'page' : undefined}>Info</a>
           </div>
 
-          <a className="brand" href="#/" aria-label="Shoes M.V., torna alla home">
+          <a
+            className="brand"
+            href="#/"
+            aria-label="Shoes M.V., torna alla home"
+            aria-current={route === '/' ? 'page' : undefined}
+          >
             Shoes <span className="brand__mark">M.V.</span>
           </a>
 

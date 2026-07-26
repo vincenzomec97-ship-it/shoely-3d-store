@@ -34,7 +34,7 @@ un negozio reale.
 
 - Hero responsive fedele all'atmosfera del riferimento Figma.
 - Scena Three.js caricata in modo lazy e predisposta per modelli GLB.
-- Fallback grafico locale quando non è disponibile un modello 3D.
+- Placeholder geometrico Three.js quando non è disponibile un modello GLB.
 - Movimento leggero della sneaker e interazione con il puntatore su desktop.
 - Transizione originale tra hero e catalogo tramite GSAP e ScrollTrigger.
 - Quattro prodotti selezionabili con configurazioni visive differenti.
@@ -160,7 +160,7 @@ public/models/cloud-motion.glb
 Il percorso associato a ogni prodotto è definito in `src/data/products.js`.
 Durante l'avvio o la build, `vite.config.js` verifica quali file sono presenti.
 Se il modello specifico manca, viene cercato `sneaker.glb`; se manca anche
-questo, la hero utilizza il fallback grafico locale.
+questo, la hero mantiene il Canvas e utilizza il placeholder geometrico 3D.
 
 Dopo aver aggiunto o sostituito un GLB, riavvia il server Vite affinché la
 disponibilità venga rilevata nuovamente.
@@ -228,7 +228,7 @@ vengono disattivate o semplificate, mantenendo disponibili i contenuti.
 Le ottimizzazioni presenti includono:
 
 - caricamento lazy del modulo Three.js della hero;
-- Canvas non montato quando nessun GLB è disponibile;
+- Canvas funzionante con placeholder geometrico quando nessun GLB è disponibile;
 - DPR limitato e ulteriormente ridotto su mobile;
 - antialias disattivato su mobile;
 - ombre semplificate su mobile;
@@ -236,7 +236,7 @@ Le ottimizzazioni presenti includono:
 - shadow map principale da 512px;
 - configurazioni e proprietà 3D memoizzate;
 - nessun preload del GLB in assenza di un beneficio concreto;
-- frame loop su richiesta quando è attivo reduced motion;
+- frame loop su richiesta con reduced motion o quando la scena non è visibile;
 - cleanup di listener, timeline GSAP e ScrollTrigger.
 
 Non vengono dichiarati punteggi Lighthouse, frame rate o tempi di caricamento:

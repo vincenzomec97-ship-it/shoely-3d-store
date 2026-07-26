@@ -36,6 +36,7 @@ function ShoeScene({
   accentColor,
   reducedMotion,
   isMobile,
+  interactionActive,
 }) {
   const scrollRig = useRef()
   const selectionRig = useRef()
@@ -44,11 +45,12 @@ function ShoeScene({
       accentColor,
       reducedMotion,
       isMobile,
-      position: isMobile ? [0, -0.2, 0] : [0.15, -0.1, 0],
-      rotation: [0.04, -0.34, -0.08],
-      scale: isMobile ? 0.74 : 0.9,
+      interactionActive,
+      position: isMobile ? [-0.08, -0.15, 0] : [0.05, -0.16, 0],
+      rotation: [0.05, -0.48, -0.08],
+      scale: isMobile ? 0.9 : 0.74,
     }),
-    [accentColor, isMobile, reducedMotion],
+    [accentColor, interactionActive, isMobile, reducedMotion],
   )
 
   useGSAP(
@@ -188,14 +190,18 @@ function ShoeScene({
       <SceneLights isMobile={isMobile} accentColor={accentColor} />
       <group ref={scrollRig}>
         <group ref={selectionRig}>
-          <Suspense fallback={<ShoePlaceholder {...objectProps} />}>
-            <ModelErrorBoundary
-              key={modelUrl ?? selectedProductId}
-              fallbackProps={objectProps}
-            >
-              <ShoeModel url={modelUrl} {...objectProps} />
-            </ModelErrorBoundary>
-          </Suspense>
+          {modelUrl ? (
+            <Suspense fallback={<ShoePlaceholder {...objectProps} />}>
+              <ModelErrorBoundary
+                key={modelUrl}
+                fallbackProps={objectProps}
+              >
+                <ShoeModel url={modelUrl} {...objectProps} />
+              </ModelErrorBoundary>
+            </Suspense>
+          ) : (
+            <ShoePlaceholder key={selectedProductId} {...objectProps} />
+          )}
         </group>
       </group>
       {!isMobile && (

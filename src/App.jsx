@@ -10,6 +10,13 @@ import { NavigationProvider, useNavigation } from './context/NavigationContext.j
 import { ProductProvider } from './context/ProductContext.jsx'
 import { assetUrl } from './utils/assetUrl.js'
 
+const PAGE_TITLES = {
+  '/': 'Shoes M.V. — 3D Sneaker Store',
+  '/store': 'Store — Shoes M.V.',
+  '/about': 'About — Shoes M.V.',
+  '/info': 'Info — Shoes M.V.',
+}
+
 function RoutedApp() {
   const { route } = useNavigation()
   const mainRef = useRef(null)
@@ -22,6 +29,10 @@ function RoutedApp() {
     }
 
     mainRef.current?.focus({ preventScroll: true })
+  }, [route])
+
+  useEffect(() => {
+    document.title = PAGE_TITLES[route] ?? PAGE_TITLES['/']
   }, [route])
 
   return (

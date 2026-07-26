@@ -6,18 +6,20 @@ function ShoeModel({
   url,
   reducedMotion,
   isMobile,
+  interactionActive,
   position = [0, 0, 0],
   rotation = [0, 0, 0],
   scale = 1,
 }) {
   const group = useRef()
   const { scene } = useGLTF(url)
-  const pointerHandlers = useShoeMotion({
+  useShoeMotion({
     group,
     position,
     rotation,
     reducedMotion,
     isMobile,
+    interactionActive,
   })
 
   return (
@@ -26,7 +28,6 @@ function ShoeModel({
       position={position}
       rotation={rotation}
       scale={scale}
-      {...pointerHandlers}
     >
       <Center>
         <Clone

@@ -1,11 +1,13 @@
 import { useEffect, useRef } from 'react'
 import { useCart } from '../../context/CartContext.jsx'
+import { useNavigation } from '../../context/NavigationContext.jsx'
 
 const FOCUSABLE_SELECTOR =
   'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
 
 function MobileMenu({ isOpen, onClose }) {
   const { totalItems, openCart } = useCart()
+  const { route } = useNavigation()
   const panelRef = useRef(null)
   const closeButtonRef = useRef(null)
   const links = [
@@ -53,7 +55,7 @@ function MobileMenu({ isOpen, onClose }) {
 
   function handleCartOpen() {
     onClose()
-    requestAnimationFrame(openCart)
+    setTimeout(openCart, 0)
   }
 
   return (
@@ -86,7 +88,14 @@ function MobileMenu({ isOpen, onClose }) {
         </div>
         <nav className="mobile-menu__nav" aria-label="Navigazione principale">
           {links.map((link) => (
-            <a key={link.href} href={link.href} onClick={onClose}>{link.label}</a>
+            <a
+              key={link.href}
+              href={link.href}
+              aria-current={route === link.href.replace(/^#/, '') ? 'page' : undefined}
+              onClick={onClose}
+            >
+              {link.label}
+            </a>
           ))}
           <button type="button" onClick={handleCartOpen}>
             <span>Carrello</span>

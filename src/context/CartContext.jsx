@@ -93,7 +93,7 @@ export function CartProvider({ children }) {
 
   const closeCart = useCallback(() => {
     setIsCartOpen(false)
-    requestAnimationFrame(() => openerRef.current?.focus())
+    setTimeout(() => openerRef.current?.focus(), 0)
   }, [])
 
   const value = useMemo(() => {

@@ -17,17 +17,22 @@ function ProductsSection() {
   useGSAP(
     () => {
       const sectionElement = section.current
+      const heading = sectionElement?.querySelector('.section-heading')
       const cards = sectionElement?.querySelectorAll('.product-card') ?? []
 
       if (reducedMotion) {
-        gsap.set([sectionElement, ...cards], { clearProps: 'all' })
+        gsap.set([heading, ...cards], { clearProps: 'all' })
         return undefined
       }
 
       const timeline = gsap.timeline({ defaults: { ease: 'power3.out' } })
 
       timeline
-        .from(sectionElement, { autoAlpha: 0, duration: 0.65 })
+        .from(heading, {
+          autoAlpha: 0,
+          y: 24,
+          duration: 0.85,
+        })
         .from(
           cards,
           {
@@ -36,10 +41,10 @@ function ProductsSection() {
             rotateX: -5,
             scale: 0.96,
             transformOrigin: '50% 100%',
-            duration: 1.1,
-            stagger: 0.13,
+            duration: 1,
+            stagger: 0.12,
           },
-          '-=0.2',
+          '-=0.35',
         )
 
       return () => timeline.kill()
@@ -56,12 +61,13 @@ function ProductsSection() {
       ref={section}
       className="products-section store-environment store-page"
       id="products"
+      aria-labelledby="store-title"
     >
       <div className="site-shell">
         <div className="section-heading">
           <div>
-            <p className="section-heading__eyebrow">Selezione Shoes M.V.</p>
-            <h2>Forme in movimento</h2>
+            <p className="section-heading__eyebrow">Store / Selezione Shoes M.V.</p>
+            <h1 id="store-title">Forme in movimento</h1>
           </div>
           <p className="section-heading__copy">
             Quattro modelli, quattro modi di attraversare la città. Esplora la

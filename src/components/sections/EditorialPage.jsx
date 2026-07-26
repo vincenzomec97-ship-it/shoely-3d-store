@@ -5,11 +5,13 @@ import { assetUrl } from '../../utils/assetUrl.js'
 
 const content = {
   '/about': {
+    label: 'About',
     eyebrow: 'Shoes M.V. / Concept',
     title: 'Una nuova prospettiva sul movimento.',
     copy: 'Shoes M.V. esplora il prodotto come esperienza visiva: sneaker, spazio e interazione convivono in una direzione digitale originale.',
   },
   '/info': {
+    label: 'Info',
     eyebrow: 'Informazioni',
     title: 'Design sperimentale, esperienza accessibile.',
     copy: 'Questo concept combina React, Three.js e animazioni progressive. Il catalogo e il carrello sono dimostrativi e non prevedono acquisti reali.',
@@ -38,6 +40,11 @@ function EditorialPage({ route }) {
   return (
     <section ref={page} className="editorial-page store-environment">
       <div className="site-shell editorial-page__content">
+        <nav className="editorial-page__breadcrumb" aria-label="Percorso">
+          <a href="#/">Home</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">{current.label}</span>
+        </nav>
         <p>{current.eyebrow}</p>
         <h1>{current.title}</h1>
         <div className="editorial-page__rule" />

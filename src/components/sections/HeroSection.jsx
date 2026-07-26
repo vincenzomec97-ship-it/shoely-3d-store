@@ -32,8 +32,18 @@ function HeroSection() {
         .from('.hero h1', {
           autoAlpha: 0,
           y: 28,
-          duration: 1.25,
+          duration: 1.1,
         })
+        .from(
+          '.hero__stage',
+          {
+            autoAlpha: 0,
+            x: 80,
+            scale: 0.94,
+            duration: 1.2,
+          },
+          '-=0.6',
+        )
         .from(
           '.primary-button',
           {
@@ -41,7 +51,7 @@ function HeroSection() {
             y: 18,
             duration: 0.8,
           },
-          '-=0.62',
+          '-=0.55',
         )
         .from(
           '.search-form',
@@ -50,17 +60,7 @@ function HeroSection() {
             y: 14,
             duration: 0.85,
           },
-          '-=0.58',
-        )
-        .from(
-          '.hero__stage',
-          {
-            autoAlpha: 0,
-            x: 80,
-            scale: 0.92,
-            duration: 1.55,
-          },
-          '-=1.05',
+          '-=0.35',
         )
 
       const depthTween = gsap.to(section.current, {

@@ -20,7 +20,6 @@ function SearchBar() {
         placeholder="Search..."
         autoComplete="off"
         value={searchQuery}
-        aria-controls="product-results"
         onChange={(event) => setSearchQuery(event.target.value)}
       />
       {searchQuery && (
