@@ -1,0 +1,48 @@
+html {
+  background: var(--color-background);
+  font-family: var(--font-sans);
+}
+
+body {
+  background:
+    radial-gradient(circle at 50% 25%, rgba(255, 92, 0, 0.1), transparent 30rem),
+    var(--color-background);
+  color: var(--color-text);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.setup-screen {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  padding: var(--space-4);
+  text-align: center;
+}
+
+.setup-screen__content {
+  width: min(100%, var(--content-width));
+}
+
+.setup-screen__eyebrow {
+  margin-bottom: var(--space-2);
+  color: var(--color-accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.setup-screen h1 {
+  font-size: clamp(2.5rem, 8vw, 6rem);
+  line-height: 0.95;
+  letter-spacing: -0.055em;
+}
+
+.setup-screen__status {
+  margin-top: var(--space-3);
+  color: var(--color-text-muted);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+}
