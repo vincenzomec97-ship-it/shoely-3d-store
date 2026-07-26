@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="title">
+  <title id="title">Illustrazione originale della sneaker Street Force</title>
+  <defs><linearGradient id="body" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f7f5ee"/><stop offset="1" stop-color="#ddd5c7"/></linearGradient></defs>
+  <path d="M61 233c61-8 109-38 150-86l38-44c21-24 56-30 84-15l97 54c27 15 57 24 88 27l54 5c25 2 40 20 36 42l-4 22c-4 22-25 37-49 37H112c-43 0-69-12-72-25-2-8 5-13 21-17Z" fill="url(#body)" stroke="#141416" stroke-width="9"/>
+  <path d="M210 148c28 2 56 12 82 31l51 38 95-71-105-58c-28-15-63-9-84 15Z" fill="#ed6b38" stroke="#141416" stroke-width="8"/>
+  <path d="M55 237h498c20 0 38-6 54-20l-3 21c-4 22-25 37-49 37H112c-43 0-69-12-72-25-1-5 4-10 15-13Z" fill="#faf9f4" stroke="#141416" stroke-width="8"/>
+  <path d="m273 109 54 91m-23-105 58 86m-27-70 61 47" stroke="#f7f5ee" stroke-width="12" stroke-linecap="round"/>
+  <path d="M115 226c77-10 142 2 200 34" fill="none" stroke="#75d9e8" stroke-width="10" stroke-linecap="round"/>
+</svg>
