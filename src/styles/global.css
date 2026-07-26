@@ -404,6 +404,12 @@ body {
 }
 
 .hero__stage {
+  --shoe-pointer-x: 0px;
+  --shoe-pointer-y: 0px;
+  --shoe-rotate-x: 0deg;
+  --shoe-rotate-y: 0deg;
+  --shoe-depth: 0px;
+
   position: relative;
   display: grid;
   min-height: clamp(32rem, 62vw, 52rem);
@@ -1097,11 +1103,6 @@ body {
 }
 
 .shoe-canvas__figma-rig {
-  --shoe-pointer-x: 0px;
-  --shoe-pointer-y: 0px;
-  --shoe-rotate-x: 0deg;
-  --shoe-rotate-y: 0deg;
-
   position: absolute;
   inset: 0;
   transform:

@@ -100,10 +100,10 @@ function HeroSection() {
     const y = Math.max(-0.5, Math.min(0.5, (event.clientY - bounds.top) / bounds.height - 0.5))
 
     stage.current.dataset.interacting = 'true'
-    stage.current.style.setProperty('--shoe-pointer-x', `${x * 24}px`)
-    stage.current.style.setProperty('--shoe-pointer-y', `${y * 15}px`)
-    stage.current.style.setProperty('--shoe-rotate-x', `${y * -4}deg`)
-    stage.current.style.setProperty('--shoe-rotate-y', `${x * 6}deg`)
+    stage.current.style.setProperty('--shoe-pointer-x', `${x * 36}px`)
+    stage.current.style.setProperty('--shoe-pointer-y', `${y * 22}px`)
+    stage.current.style.setProperty('--shoe-rotate-x', `${y * -8}deg`)
+    stage.current.style.setProperty('--shoe-rotate-y', `${x * 12}deg`)
     stage.current.style.setProperty('--shoe-depth', `${Math.abs(x) * 8 + Math.abs(y) * 5}px`)
   }
 
