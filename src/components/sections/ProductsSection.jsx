@@ -27,7 +27,7 @@ function ProductsSection() {
       const timeline = gsap.timeline({ defaults: { ease: 'power3.out' } })
 
       timeline
-        .from(sectionElement, { autoAlpha: 0, duration: 0.45 })
+        .from(sectionElement, { autoAlpha: 0, duration: 0.65 })
         .from(
           cards,
           {
@@ -36,8 +36,8 @@ function ProductsSection() {
             rotateX: -5,
             scale: 0.96,
             transformOrigin: '50% 100%',
-            duration: 0.85,
-            stagger: 0.09,
+            duration: 1.1,
+            stagger: 0.13,
           },
           '-=0.2',
         )
@@ -60,12 +60,12 @@ function ProductsSection() {
       <div className="site-shell">
         <div className="section-heading">
           <div>
-            <p className="section-heading__eyebrow">Selezione Shoely</p>
+            <p className="section-heading__eyebrow">Selezione Shoes M.V.</p>
             <h2>Forme in movimento</h2>
           </div>
           <p className="section-heading__copy">
             Quattro modelli, quattro modi di attraversare la città. Esplora la
-            prima collezione Shoely.
+            prima collezione Shoes M.V.
           </p>
         </div>
 

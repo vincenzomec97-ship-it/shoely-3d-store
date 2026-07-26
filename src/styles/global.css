@@ -1078,7 +1078,7 @@ body {
 /* Multi-page experience */
 .page-view {
   min-height: 100svh;
-  animation: page-view-in 420ms ease both;
+  animation: page-view-in 650ms ease both;
 }
 
 .site-header__link[aria-current="page"]::after {

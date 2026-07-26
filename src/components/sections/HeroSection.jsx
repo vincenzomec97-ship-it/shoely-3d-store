@@ -32,25 +32,25 @@ function HeroSection() {
         .from('.hero h1', {
           autoAlpha: 0,
           y: 28,
-          duration: 0.85,
+          duration: 1.25,
         })
         .from(
           '.primary-button',
           {
             autoAlpha: 0,
             y: 18,
-            duration: 0.55,
+            duration: 0.8,
           },
-          '-=0.48',
+          '-=0.62',
         )
         .from(
           '.search-form',
           {
             autoAlpha: 0,
             y: 14,
-            duration: 0.55,
+            duration: 0.85,
           },
-          '-=0.4',
+          '-=0.58',
         )
         .from(
           '.hero__stage',
@@ -58,9 +58,9 @@ function HeroSection() {
             autoAlpha: 0,
             x: 80,
             scale: 0.92,
-            duration: 1.1,
+            duration: 1.55,
           },
-          '-=0.85',
+          '-=1.05',
         )
 
       const depthTween = gsap.to(section.current, {
@@ -137,7 +137,7 @@ function HeroSection() {
         <div
           ref={stage}
           className="hero__stage"
-          aria-label="Anteprima tridimensionale della sneaker Shoely"
+          aria-label="Anteprima tridimensionale della sneaker Shoes M.V."
           onPointerMove={handlePointerMove}
           onPointerLeave={handlePointerLeave}
         >

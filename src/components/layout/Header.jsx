@@ -38,8 +38,8 @@ function Header() {
             <a className="site-header__link" href="#/info" aria-current={route === '/info' ? 'page' : undefined}>Info</a>
           </div>
 
-          <a className="brand" href="#/" aria-label="Shoely, torna alla home">
-            ShOe<span className="brand__mark">ly</span>
+          <a className="brand" href="#/" aria-label="Shoes M.V., torna alla home">
+            Shoes <span className="brand__mark">M.V.</span>
           </a>
 
           <div className="site-header__actions">

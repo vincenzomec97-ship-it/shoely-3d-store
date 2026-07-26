@@ -17,7 +17,7 @@ class ModelErrorBoundary extends Component {
 
   componentDidCatch(error) {
     if (import.meta.env.DEV) {
-      console.warn('Shoely: impossibile caricare sneaker.glb, uso il placeholder.', error)
+      console.warn('Shoes M.V.: impossibile caricare sneaker.glb, uso il placeholder.', error)
     }
   }
 

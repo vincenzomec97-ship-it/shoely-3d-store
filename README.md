@@ -1,6 +1,6 @@
-# Shoely — 3D Sneaker Store
+# Shoes M.V. — 3D Sneaker Store
 
-Shoely è un concept e-commerce dedicato alle sneaker, nato come progetto UI/UX
+Shoes M.V. è un concept e-commerce dedicato alle sneaker, nato come progetto UI/UX
 in Figma e successivamente trasformato in un sito React responsive e
 funzionante. Il progetto mantiene l'atmosfera del prototipo originale e la
 combina con una scena Three.js predisposta per modelli GLB, interazioni leggere
@@ -17,9 +17,9 @@ e transizioni GSAP.
 
 ## Anteprima
 
-![Home desktop di Shoely](docs/screenshots/shoely-desktop.png)
+![Home desktop di Shoes M.V.](docs/screenshots/shoely-desktop.png)
 
-![Catalogo Shoely](docs/screenshots/shoely-store.png)
+![Catalogo Shoes M.V.](docs/screenshots/shoely-store.png)
 
 ## Obiettivo
 
@@ -257,7 +257,7 @@ GLB eventualmente aggiunti.
 
 ## Disclaimer
 
-Shoely è un progetto concept realizzato esclusivamente per portfolio e
+Shoes M.V. è un progetto concept realizzato esclusivamente per portfolio e
 dimostrazione tecnica.
 
 Il progetto non è affiliato, sponsorizzato o approvato da Nike o da altri

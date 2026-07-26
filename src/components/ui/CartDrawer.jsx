@@ -91,7 +91,7 @@ function CartDrawer() {
           ) : (
             <div className="cart-empty" role="status">
               <strong>Il carrello è vuoto</strong>
-              <p>Aggiungi una sneaker dalla collezione Shoely.</p>
+              <p>Aggiungi una sneaker dalla collezione Shoes M.V.</p>
             </div>
           )}
         </div>

@@ -5,9 +5,9 @@ import { assetUrl } from '../../utils/assetUrl.js'
 
 const content = {
   '/about': {
-    eyebrow: 'Shoely / Concept',
+    eyebrow: 'Shoes M.V. / Concept',
     title: 'Una nuova prospettiva sul movimento.',
-    copy: 'Shoely esplora il prodotto come esperienza visiva: sneaker, spazio e interazione convivono in una direzione digitale originale.',
+    copy: 'Shoes M.V. esplora il prodotto come esperienza visiva: sneaker, spazio e interazione convivono in una direzione digitale originale.',
   },
   '/info': {
     eyebrow: 'Informazioni',
@@ -27,8 +27,8 @@ function EditorialPage({ route }) {
       gsap.from('.editorial-page__content > *', {
         autoAlpha: 0,
         y: 34,
-        duration: 0.8,
-        stagger: 0.1,
+        duration: 1.05,
+        stagger: 0.14,
         ease: 'power3.out',
       })
     },
