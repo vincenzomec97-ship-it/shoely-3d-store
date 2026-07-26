@@ -1,36 +1,53 @@
 const products = [
   {
-    id: 'aero-one-retro',
-    name: 'Aero One Retro',
-    category: 'Lifestyle',
+    id: 'air-jordan-retro-high',
+    name: 'Air Jordan 1 Retro High',
+    subtitle: 'High top / Ice blue',
     price: 99,
-    formattedPrice: '99,00 €',
-    image: '/images/aero-one-retro.svg',
+    image: '/images/figma-air-jordan-retro.png',
+    model: '/models/aero-one.glb',
+    accentColor: '#ff6b25',
+    description: 'Profilo alto, pannelli azzurri e una silhouette rétro.',
   },
   {
-    id: 'street-force',
-    name: 'Street Force',
-    category: 'Urban',
-    price: 159,
-    formattedPrice: '159,00 €',
-    image: '/images/street-force.svg',
+    id: 'air-force-mid-special',
+    name: 'Air Force 1 Mid Special',
+    subtitle: 'Custom edition / Multicolor',
+    price: 259,
+    image: '/images/figma-air-force-special.png',
+    model: '/models/street-force.glb',
+    accentColor: '#75d9e8',
+    description: 'Edizione illustrata multicolore dal carattere grafico.',
   },
   {
-    id: 'pulse-runner',
-    name: 'Pulse Runner',
-    category: 'Performance',
+    id: 'nike-tuned',
+    name: 'Nike Tuned',
+    subtitle: 'Performance / Red black',
     price: 199,
-    formattedPrice: '199,00 €',
-    image: '/images/pulse-runner.svg',
+    image: '/images/figma-nike-tuned.png',
+    model: '/models/pulse-runner.glb',
+    accentColor: '#efc56d',
+    description: 'Runner tecnica rossa e nera con volumi dinamici.',
   },
   {
-    id: 'cloud-motion',
-    name: 'Cloud Motion',
-    category: 'Everyday',
+    id: 'air-force-mid-white',
+    name: 'Air Force 1 Mid',
+    subtitle: 'Mid top / Drip white',
     price: 179,
-    formattedPrice: '179,00 €',
-    image: '/images/cloud-motion.svg',
+    image: '/images/figma-air-force-white.png',
+    model: '/models/cloud-motion.glb',
+    accentColor: '#a8e8f0',
+    description: 'Base bianca con dettaglio nero a effetto dripping.',
   },
 ]
+
+const priceFormatter = new Intl.NumberFormat('it-IT', {
+  style: 'currency',
+  currency: 'EUR',
+})
+
+export function formatPrice(price) {
+  return priceFormatter.format(price)
+}
 
 export default products

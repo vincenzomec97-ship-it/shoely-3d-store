@@ -2,17 +2,40 @@ import Header from './components/layout/Header.jsx'
 import Footer from './components/layout/Footer.jsx'
 import HeroSection from './components/sections/HeroSection.jsx'
 import ProductsSection from './components/sections/ProductsSection.jsx'
+import EditorialPage from './components/sections/EditorialPage.jsx'
+import CartDrawer from './components/ui/CartDrawer.jsx'
+import { CartProvider } from './context/CartContext.jsx'
+import { NavigationProvider, useNavigation } from './context/NavigationContext.jsx'
+import { ProductProvider } from './context/ProductContext.jsx'
 
-function App() {
+function RoutedApp() {
+  const { route } = useNavigation()
+
   return (
     <>
       <Header />
-      <main>
-        <HeroSection />
-        <ProductsSection />
+      <main className="page-view" key={route}>
+        {route === '/' && <HeroSection />}
+        {route === '/store' && <ProductsSection />}
+        {(route === '/about' || route === '/info') && (
+          <EditorialPage route={route} />
+        )}
       </main>
       <Footer />
+      <CartDrawer />
     </>
+  )
+}
+
+function App() {
+  return (
+    <NavigationProvider>
+      <CartProvider>
+        <ProductProvider>
+          <RoutedApp />
+        </ProductProvider>
+      </CartProvider>
+    </NavigationProvider>
   )
 }
 

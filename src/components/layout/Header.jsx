@@ -1,9 +1,17 @@
-import { useState } from 'react'
+import { useCallback, useRef, useState } from 'react'
 import CartButton from '../ui/CartButton.jsx'
 import MobileMenu from './MobileMenu.jsx'
+import { useNavigation } from '../../context/NavigationContext.jsx'
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const menuTriggerRef = useRef(null)
+  const { route } = useNavigation()
+
+  const closeMenu = useCallback(() => {
+    setIsMenuOpen(false)
+    requestAnimationFrame(() => menuTriggerRef.current?.focus())
+  }, [])
 
   return (
     <>
@@ -11,10 +19,12 @@ function Header() {
         <div className="site-shell site-header__inner">
           <div className="site-header__group">
             <button
+              ref={menuTriggerRef}
               className="menu-trigger"
               type="button"
               aria-expanded={isMenuOpen}
               aria-controls="mobile-menu"
+              aria-label={isMenuOpen ? 'Chiudi menu di navigazione' : 'Apri menu di navigazione'}
               onClick={() => setIsMenuOpen(true)}
             >
               <span className="menu-trigger__icon" aria-hidden="true">
@@ -24,22 +34,22 @@ function Header() {
               </span>
               <span className="menu-trigger__label">Menu</span>
             </button>
-            <a className="site-header__link" href="#about">About</a>
-            <a className="site-header__link" href="#info">Info</a>
+            <a className="site-header__link" href="#/about" aria-current={route === '/about' ? 'page' : undefined}>About</a>
+            <a className="site-header__link" href="#/info" aria-current={route === '/info' ? 'page' : undefined}>Info</a>
           </div>
 
-          <a className="brand" href="#top" aria-label="Shoely, torna all'inizio">
-            Shoe<span className="brand__mark">ly</span>
+          <a className="brand" href="#/" aria-label="Shoely, torna alla home">
+            ShOe<span className="brand__mark">ly</span>
           </a>
 
           <div className="site-header__actions">
-            <a className="site-header__link" href="#products">Store</a>
+            <a className="site-header__link" href="#/store" aria-current={route === '/store' ? 'page' : undefined}>Store</a>
             <CartButton />
           </div>
         </div>
       </header>
 
-      <MobileMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
+      <MobileMenu isOpen={isMenuOpen} onClose={closeMenu} />
     </>
   )
 }
