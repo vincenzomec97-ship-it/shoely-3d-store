@@ -63,37 +63,47 @@ function ShoeCanvas({ product }) {
   return (
     <div
       ref={containerRef}
-      className={`shoe-canvas${hasModel ? ' has-model' : ' has-placeholder'}`}
+      className={`shoe-canvas${hasModel ? ' has-model' : ' has-image-fallback'}`}
       aria-hidden="true"
       onPointerEnter={handlePointerEnter}
       onPointerLeave={handlePointerLeave}
     >
-      <Canvas
-        camera={camera}
-        dpr={dpr}
-        frameloop={reducedMotion || !isSceneVisible ? 'demand' : 'always'}
-        shadows={isMobile ? false : 'basic'}
-        gl={rendererConfig}
-        performance={PERFORMANCE_CONFIG}
-        fallback={(
-          <div className="shoe-canvas__figma-rig">
-            <img
-              className="shoe-canvas__figma-shoe"
-              src={assetUrl('images/figma-hero-shoe.png')}
-              alt=""
-            />
-          </div>
-        )}
-      >
-        <ShoeScene
-          modelUrl={publicModelUrl}
-          selectedProductId={product.id}
-          accentColor={product.accentColor}
-          reducedMotion={reducedMotion}
-          isMobile={isMobile}
-          interactionActive={interactionActive}
-        />
-      </Canvas>
+      {hasModel ? (
+        <Canvas
+          camera={camera}
+          dpr={dpr}
+          frameloop={reducedMotion || !isSceneVisible ? 'demand' : 'always'}
+          shadows={isMobile ? false : 'basic'}
+          gl={rendererConfig}
+          performance={PERFORMANCE_CONFIG}
+          fallback={(
+            <div className="shoe-canvas__figma-rig">
+              <img
+                className="shoe-canvas__figma-shoe"
+                src={assetUrl('images/figma-hero-shoe.png')}
+                alt=""
+              />
+            </div>
+          )}
+        >
+          <ShoeScene
+            modelUrl={publicModelUrl}
+            selectedProductId={product.id}
+            accentColor={product.accentColor}
+            reducedMotion={reducedMotion}
+            isMobile={isMobile}
+            interactionActive={interactionActive}
+          />
+        </Canvas>
+      ) : (
+        <div className="shoe-canvas__figma-rig">
+          <img
+            className="shoe-canvas__figma-shoe"
+            src={assetUrl('images/figma-hero-shoe.png')}
+            alt=""
+          />
+        </div>
+      )}
       <SceneLoader status={modelStatus} />
     </div>
   )

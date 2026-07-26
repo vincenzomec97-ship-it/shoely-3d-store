@@ -1,6 +1,6 @@
 import { RoundedBox } from '@react-three/drei'
-import { useEffect, useMemo, useRef } from 'react'
-import { CanvasTexture, LinearFilter, Shape } from 'three'
+import { useMemo, useRef } from 'react'
+import { Shape } from 'three'
 import useShoeMotion from '../../hooks/useShoeMotion.js'
 
 function ShoePlaceholder({
@@ -41,34 +41,6 @@ function ShoePlaceholder({
       steps: 1,
     }),
     [],
-  )
-
-  const airLabelTexture = useMemo(() => {
-    if (typeof document === 'undefined') return null
-
-    const canvas = document.createElement('canvas')
-    canvas.width = 256
-    canvas.height = 96
-
-    const context = canvas.getContext('2d')
-    if (!context) return null
-
-    context.clearRect(0, 0, canvas.width, canvas.height)
-    context.fillStyle = '#1a1a1c'
-    context.font = 'italic 700 58px Arial'
-    context.textAlign = 'center'
-    context.textBaseline = 'middle'
-    context.fillText('AIR', canvas.width / 2, canvas.height / 2)
-
-    const texture = new CanvasTexture(canvas)
-    texture.minFilter = LinearFilter
-    texture.magFilter = LinearFilter
-    return texture
-  }, [])
-
-  useEffect(
-    () => () => airLabelTexture?.dispose(),
-    [airLabelTexture],
   )
 
   useShoeMotion({
@@ -112,17 +84,6 @@ function ShoePlaceholder({
         <planeGeometry args={[0.64, 0.72]} />
         <meshStandardMaterial color="#75d9e8" roughness={0.4} />
       </mesh>
-
-      {airLabelTexture && (
-        <mesh position={[-1.42, -0.67, 0.656]}>
-          <planeGeometry args={[0.68, 0.24]} />
-          <meshBasicMaterial
-            map={airLabelTexture}
-            transparent
-            toneMapped={false}
-          />
-        </mesh>
-      )}
 
       {[-0.82, -0.42, -0.02, 0.38].map((x) => (
         <mesh key={x} position={[x, 0.58, 0.66]} rotation={[0, 0, 1.08]} castShadow>
