@@ -1318,18 +1318,6 @@ body {
   backdrop-filter: blur(10px);
 }
 
-.editorial-page__shoe {
-  position: absolute;
-  z-index: 1;
-  right: -14rem;
-  bottom: -9rem;
-  width: min(62rem, 70vw);
-  opacity: 0.5;
-  filter: drop-shadow(0 2rem 2rem rgba(0, 0, 0, 0.4));
-  transform: rotate(-18deg);
-  pointer-events: none;
-}
-
 @media (max-width: 70rem) {
   .store-page {
     align-items: start;
@@ -1374,13 +1362,6 @@ body {
     font-size: clamp(2.8rem, 13vw, 4rem);
   }
 
-  .editorial-page__shoe {
-    right: -10rem;
-    bottom: -2rem;
-    width: 42rem;
-    max-width: none;
-    opacity: 0.36;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1937,7 +1918,7 @@ body {
   width: min(56rem, 72vw);
   max-width: none;
   filter: drop-shadow(0.35rem 0.75rem 0.3rem rgba(0, 0, 0, 0.32));
-  transform: translate(-50%, -50%) rotate(36deg) scaleX(-1);
+  transform: translate(-50%, -50%) rotate(36deg);
   animation: figma-shoe-float 5.5s ease-in-out infinite;
   pointer-events: none;
 }
@@ -1949,10 +1930,10 @@ body {
 @keyframes figma-shoe-float {
   0%,
   100% {
-    transform: translate(-50%, -50%) rotate(36deg) scaleX(-1) translateY(0);
+    transform: translate(-50%, -50%) rotate(36deg) translateY(0);
   }
   50% {
-    transform: translate(-50%, -50%) rotate(35deg) scaleX(-1) translateY(-0.7rem);
+    transform: translate(-50%, -50%) rotate(35deg) translateY(-0.7rem);
   }
 }
 
@@ -2064,16 +2045,16 @@ body {
     top: 48%;
     left: 50%;
     width: min(35rem, 128vw);
-    transform: translate(-50%, -50%) rotate(25deg) scaleX(-1);
+    transform: translate(-50%, -50%) rotate(25deg);
   }
 
   @keyframes figma-shoe-float {
     0%,
     100% {
-      transform: translate(-50%, -50%) rotate(25deg) scaleX(-1) translateY(0);
+      transform: translate(-50%, -50%) rotate(25deg) translateY(0);
     }
     50% {
-      transform: translate(-50%, -50%) rotate(24deg) scaleX(-1) translateY(-0.45rem);
+      transform: translate(-50%, -50%) rotate(24deg) translateY(-0.45rem);
     }
   }
 }
