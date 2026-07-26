@@ -7,6 +7,7 @@ import CartDrawer from './components/ui/CartDrawer.jsx'
 import { CartProvider } from './context/CartContext.jsx'
 import { NavigationProvider, useNavigation } from './context/NavigationContext.jsx'
 import { ProductProvider } from './context/ProductContext.jsx'
+import { assetUrl } from './utils/assetUrl.js'
 
 function RoutedApp() {
   const { route } = useNavigation()
@@ -14,7 +15,13 @@ function RoutedApp() {
   return (
     <>
       <Header />
-      <main className="page-view" key={route}>
+      <main
+        className="page-view"
+        key={route}
+        style={{
+          '--store-background-image': `url("${assetUrl('images/figma-store-background.png')}")`,
+        }}
+      >
         {route === '/' && <HeroSection />}
         {route === '/store' && <ProductsSection />}
         {(route === '/about' || route === '/info') && (

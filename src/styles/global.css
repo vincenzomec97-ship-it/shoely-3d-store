@@ -1660,7 +1660,7 @@ body {
 .store-environment {
   background:
     linear-gradient(90deg, rgba(0, 0, 0, 0.22), rgba(0, 0, 0, 0.22)),
-    url("/images/figma-store-background.png") center / cover no-repeat,
+    var(--store-background-image) center / cover no-repeat,
     #2b2b2b;
 }
 

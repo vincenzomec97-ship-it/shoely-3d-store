@@ -1,6 +1,7 @@
 import { useRef } from 'react'
 import { gsap, useGSAP } from '../../utils/gsap.js'
 import useReducedMotion from '../../hooks/useReducedMotion.js'
+import { assetUrl } from '../../utils/assetUrl.js'
 
 const content = {
   '/about': {
@@ -45,7 +46,7 @@ function EditorialPage({ route }) {
       </div>
       <img
         className="editorial-page__shoe"
-        src="/images/figma-hero-shoe.png"
+        src={assetUrl('images/figma-hero-shoe.png')}
         alt=""
       />
     </section>

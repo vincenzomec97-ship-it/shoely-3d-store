@@ -17,6 +17,7 @@ const modelAvailability = Object.fromEntries(
 )
 
 export default defineConfig({
+  base: '/shoely-3d-store/',
   plugins: [react()],
   resolve: {
     dedupe: ['react', 'react-dom'],

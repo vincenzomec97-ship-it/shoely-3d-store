@@ -4,6 +4,7 @@ import useReducedMotion from '../../hooks/useReducedMotion.js'
 import useResponsiveThree from '../../hooks/useResponsiveThree.js'
 import SceneLoader from './SceneLoader.jsx'
 import ShoeScene from './ShoeScene.jsx'
+import { assetUrl } from '../../utils/assetUrl.js'
 
 const MODEL_URL = '/models/sneaker.glb'
 const PERFORMANCE_CONFIG = { min: 0.6 }
@@ -19,6 +20,7 @@ function ShoeCanvas({ product }) {
       ? MODEL_URL
       : null
   const hasModel = Boolean(resolvedModelUrl)
+  const publicModelUrl = hasModel ? assetUrl(resolvedModelUrl) : null
   const modelStatus = hasModel ? 'available' : 'missing'
   const rendererConfig = useMemo(
     () => ({
@@ -45,14 +47,14 @@ function ShoeCanvas({ product }) {
             <div className="shoe-canvas__figma-rig">
               <img
                 className="shoe-canvas__figma-shoe"
-                src="/images/figma-hero-shoe.png"
+                src={assetUrl('images/figma-hero-shoe.png')}
                 alt=""
               />
             </div>
           )}
         >
           <ShoeScene
-            modelUrl={resolvedModelUrl}
+            modelUrl={publicModelUrl}
             selectedProductId={product.id}
             accentColor={product.accentColor}
             reducedMotion={reducedMotion}
@@ -64,7 +66,7 @@ function ShoeCanvas({ product }) {
         <div className="shoe-canvas__figma-rig">
           <img
             className="shoe-canvas__figma-shoe"
-            src="/images/figma-hero-shoe.png"
+            src={assetUrl('images/figma-hero-shoe.png')}
             alt=""
           />
         </div>
