@@ -16,10 +16,14 @@ function ProductsSection() {
 
   useGSAP(
     () => {
-      if (reducedMotion) return undefined
-
       const sectionElement = section.current
       const cards = sectionElement?.querySelectorAll('.product-card') ?? []
+
+      if (reducedMotion) {
+        gsap.set([sectionElement, ...cards], { clearProps: 'all' })
+        return undefined
+      }
+
       const timeline = gsap.timeline({ defaults: { ease: 'power3.out' } })
 
       timeline

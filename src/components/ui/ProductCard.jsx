@@ -25,7 +25,12 @@ function ProductCard({ product, index, isActive, onSelect }) {
           </span>
         </div>
         <div className="product-card__media">
-          <img src={product.image} alt="" />
+          <img
+            src={product.image}
+            alt=""
+            loading="lazy"
+            decoding="async"
+          />
         </div>
         <div className="product-card__body">
           <h3>{product.name}</h3>

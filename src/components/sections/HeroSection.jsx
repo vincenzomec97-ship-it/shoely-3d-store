@@ -16,7 +16,13 @@ function HeroSection() {
 
   useGSAP(
     () => {
-      if (reducedMotion) return undefined
+      if (reducedMotion) {
+        gsap.set(
+          ['.hero h1', '.primary-button', '.search-form', '.hero__stage'],
+          { clearProps: 'all' },
+        )
+        return undefined
+      }
 
       const intro = gsap.timeline({
         defaults: { ease: 'power3.out' },

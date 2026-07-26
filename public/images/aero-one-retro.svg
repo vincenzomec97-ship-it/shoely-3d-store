@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="title">
-  <title id="title">Illustrazione originale della sneaker Aero One Retro</title>
-  <defs><linearGradient id="body" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f5f0e8"/><stop offset="1" stop-color="#b9cad6"/></linearGradient></defs>
-  <path d="M82 239c48-6 95-26 132-62l48-47c21-21 53-28 81-16l78 33c24 10 49 16 75 18l52 4c31 3 49 22 44 46l-5 25c-4 20-23 34-45 34H120c-40 0-62-11-66-22-4-8 6-12 28-13Z" fill="url(#body)" stroke="#171719" stroke-width="9"/>
-  <path d="m213 178 43 50 198-48-107-52c-28-13-60-3-77 22l-12 18" fill="#9ecbda" stroke="#171719" stroke-width="8"/>
-  <path d="M80 239h461c22 0 39-10 51-24l-4 25c-4 20-23 34-45 34H120c-40 0-62-11-66-22-3-6 3-10 26-13Z" fill="#f8f8f4" stroke="#171719" stroke-width="8"/>
-  <path d="m279 155 74 70m-46-86 78 77m-51-88 80 76" stroke="#f5f0e8" stroke-width="13" stroke-linecap="round"/>
-  <path d="M151 222c59-3 111 7 158 29M440 188l48 47" fill="none" stroke="#ff5a0a" stroke-width="10" stroke-linecap="round"/>
-</svg>

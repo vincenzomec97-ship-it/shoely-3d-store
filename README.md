@@ -1,9 +1,25 @@
 # Shoely — 3D Sneaker Store
 
-Shoely è una landing page e-commerce concept dedicata a una collezione di
-sneaker originali. Il progetto combina un'interfaccia ispirata a un riferimento
-Figma con una scena Three.js predisposta per modelli GLB, interazioni leggere e
-transizioni legate allo scroll.
+Shoely è un concept e-commerce dedicato alle sneaker, nato come progetto UI/UX
+in Figma e successivamente trasformato in un sito React responsive e
+funzionante. Il progetto mantiene l'atmosfera del prototipo originale e la
+combina con una scena Three.js predisposta per modelli GLB, interazioni leggere
+e transizioni GSAP.
+
+## Collegamenti
+
+- [Demo online](https://vincenzomec97-ship-it.github.io/shoely-3d-store/)
+- [Prototipo Figma Shoes](https://www.figma.com/proto/G09Tq8i37addPsCe293DVz/Untitled?node-id=2-2)
+- [Portfolio](https://vincenzomec97-ship-it.github.io/VinMec-portfolio/)
+
+> La demo GitHub Pages diventa disponibile dopo il primo deploy del branch
+> `main`.
+
+## Anteprima
+
+![Home desktop di Shoely](docs/screenshots/shoely-desktop.png)
+
+![Catalogo Shoely](docs/screenshots/shoely-store.png)
 
 ## Obiettivo
 
@@ -27,6 +43,8 @@ un negozio reale.
 - Carrello dimostrativo lato client con quantità, totale e persistenza locale.
 - Drawer del carrello e menu mobile accessibili.
 - Supporto per `prefers-reduced-motion`.
+- Metadata SEO e social sharing, sitemap e robots.
+- Pubblicazione automatizzata tramite GitHub Pages.
 
 ## Tecnologie
 
