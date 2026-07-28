@@ -1,11 +1,12 @@
-# 3D model attribution
+# 3D model information
 
-## Materials Variants Shoe
+## Shoes M.V. sneaker
 
 - File: `sneaker.glb`
-- Copyright: © 2021 Shopify
-- Creator: Shopify
-- License: [CC BY 4.0 International](https://creativecommons.org/licenses/by/4.0/)
-- Source: [Khronos glTF Sample Assets](https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/MaterialsVariantsShoe)
+- Source: modello OBJ e texture forniti dall'autore del progetto.
+- Web preparation: conversione in GLB, texture ridotta a 2048 px e normali
+  ricalcolate per l'illuminazione Three.js.
 
-The model is distributed unmodified under the terms of the CC BY 4.0 license.
+Il modello contiene elementi grafici che possono ricordare marchi commerciali.
+Shoes M.V. è un progetto concept indipendente e non è affiliato, sponsorizzato
+o approvato da Nike o da altri marchi.

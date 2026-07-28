@@ -52,7 +52,7 @@ function ShoeScene({
     () => ({
       position: isMobile ? [-0.08, -0.15, 0] : [0.05, -0.16, 0],
       rotation: [0.05, -0.48, -0.08],
-      scale: isMobile ? 0.9 : 0.62,
+      scale: isMobile ? 1.12 : 0.62,
     }),
     [isMobile],
   )

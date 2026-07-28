@@ -149,9 +149,8 @@ Il modello condiviso incluso viene caricato come:
 public/models/sneaker.glb
 ```
 
-Il file è il modello **Materials Variants Shoe**, © 2021 Shopify, distribuito
-con licenza CC BY 4.0 tramite la raccolta ufficiale Khronos glTF Sample Assets.
-I dettagli completi sono riportati in
+Il file contiene il modello Shoes M.V. fornito dall'autore del progetto,
+convertito e ottimizzato per il caricamento web. I dettagli sono riportati in
 [`public/models/ATTRIBUTION.md`](public/models/ATTRIBUTION.md).
 
 Sono inoltre supportati modelli specifici per prodotto:
