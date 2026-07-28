@@ -51,7 +51,7 @@ function ShoeScene({
   const objectTransform = useMemo(
     () => ({
       position: isMobile ? [-0.08, -0.15, 0] : [0.05, -0.16, 0],
-      rotation: [0.05, -0.48, -0.08],
+      rotation: [0.08, -0.5, -0.18],
       scale: isMobile ? 1.12 : 0.62,
     }),
     [isMobile],
