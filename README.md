@@ -131,7 +131,8 @@ npm run preview
 ## Gestione degli asset
 
 - Le immagini utilizzate dall'interfaccia si trovano in `public/images/`.
-- I modelli 3D devono essere inseriti in `public/models/`.
+- Il modello 3D condiviso e le relative attribuzioni si trovano in
+  `public/models/`.
 - Il riferimento progettuale si trova in `references/` e non viene importato
   direttamente dall'applicazione.
 - Il sito non dipende da immagini remote o API esterne.
@@ -142,11 +143,16 @@ d'utilizzo e presenza di marchi riconoscibili in ogni immagine o modello.
 
 ## Sostituzione dei modelli GLB
 
-Il modello condiviso di fallback può essere aggiunto come:
+Il modello condiviso incluso viene caricato come:
 
 ```text
 public/models/sneaker.glb
 ```
+
+Il file è il modello **Materials Variants Shoe**, © 2021 Shopify, distribuito
+con licenza CC BY 4.0 tramite la raccolta ufficiale Khronos glTF Sample Assets.
+I dettagli completi sono riportati in
+[`public/models/ATTRIBUTION.md`](public/models/ATTRIBUTION.md).
 
 Sono inoltre supportati modelli specifici per prodotto:
 
@@ -245,7 +251,8 @@ GLB eventualmente aggiunti.
 
 ## Limitazioni
 
-- Non sono inclusi modelli GLB nel repository allo stato attuale.
+- Non sono inclusi modelli GLB specifici per i singoli prodotti; in loro
+  assenza viene utilizzato il modello condiviso `sneaker.glb`.
 - Il carrello è dimostrativo e viene salvato soltanto in `localStorage`.
 - Non sono presenti backend, database, autenticazione o sincronizzazione tra
   dispositivi.

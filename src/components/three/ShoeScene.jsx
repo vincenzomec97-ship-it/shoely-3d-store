@@ -1,6 +1,7 @@
 import { Component, Suspense, useMemo, useRef } from 'react'
 import { ContactShadows } from '@react-three/drei'
 import { gsap, ScrollTrigger, useGSAP } from '../../utils/gsap.js'
+import useShoeMotion from '../../hooks/useShoeMotion.js'
 import SceneLights from './SceneLights.jsx'
 import ShoeModel from './ShoeModel.jsx'
 import ShoePlaceholder from './ShoePlaceholder.jsx'
@@ -36,21 +37,24 @@ function ShoeScene({
   accentColor,
   reducedMotion,
   isMobile,
-  interactionActive,
 }) {
   const scrollRig = useRef()
   const selectionRig = useRef()
-  const objectProps = useMemo(
+  const manualRig = useRef()
+  const floatingRig = useRef()
+  const interactionHandlers = useShoeMotion({
+    manualGroup: manualRig,
+    floatingGroup: floatingRig,
+    reducedMotion,
+    isMobile,
+  })
+  const objectTransform = useMemo(
     () => ({
-      accentColor,
-      reducedMotion,
-      isMobile,
-      interactionActive,
       position: isMobile ? [-0.08, -0.15, 0] : [0.05, -0.16, 0],
       rotation: [0.05, -0.48, -0.08],
-      scale: isMobile ? 0.9 : 0.74,
+      scale: isMobile ? 0.9 : 0.62,
     }),
-    [accentColor, interactionActive, isMobile, reducedMotion],
+    [isMobile],
   )
 
   useGSAP(
@@ -190,18 +194,33 @@ function ShoeScene({
       <SceneLights isMobile={isMobile} accentColor={accentColor} />
       <group ref={scrollRig}>
         <group ref={selectionRig}>
-          {modelUrl ? (
-            <Suspense fallback={<ShoePlaceholder {...objectProps} />}>
-              <ModelErrorBoundary
-                key={modelUrl}
-                fallbackProps={objectProps}
-              >
-                <ShoeModel url={modelUrl} {...objectProps} />
-              </ModelErrorBoundary>
-            </Suspense>
-          ) : (
-            <ShoePlaceholder key={selectedProductId} {...objectProps} />
-          )}
+          <group
+            position={objectTransform.position}
+            rotation={objectTransform.rotation}
+            scale={objectTransform.scale}
+          >
+            <group ref={manualRig} {...interactionHandlers}>
+              <group ref={floatingRig}>
+                {modelUrl ? (
+                  <Suspense
+                    fallback={<ShoePlaceholder accentColor={accentColor} />}
+                  >
+                    <ModelErrorBoundary
+                      key={modelUrl}
+                      fallbackProps={{ accentColor }}
+                    >
+                      <ShoeModel url={modelUrl} />
+                    </ModelErrorBoundary>
+                  </Suspense>
+                ) : (
+                  <ShoePlaceholder
+                    key={selectedProductId}
+                    accentColor={accentColor}
+                  />
+                )}
+              </group>
+            </group>
+          </group>
         </group>
       </group>
       {!isMobile && (

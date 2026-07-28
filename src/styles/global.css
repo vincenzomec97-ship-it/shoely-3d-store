@@ -465,10 +465,12 @@ body {
   pointer-events: none !important;
 }
 
-@media (min-width: 46.01rem) and (hover: hover) and (pointer: fine) {
-  .shoe-canvas canvas {
-    pointer-events: auto !important;
-  }
+.shoe-canvas.has-model canvas {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  pointer-events: auto !important;
+  touch-action: auto;
+  user-select: none;
 }
 
 .shoe-canvas__notice {

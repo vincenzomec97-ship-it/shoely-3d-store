@@ -11,7 +11,6 @@ const PERFORMANCE_CONFIG = { min: 0.6 }
 
 function ShoeCanvas({ product }) {
   const containerRef = useRef(null)
-  const interactionActive = useRef(false)
   const [isSceneVisible, setIsSceneVisible] = useState(true)
   const reducedMotion = useReducedMotion()
   const { camera, dpr, isMobile } = useResponsiveThree()
@@ -49,24 +48,11 @@ function ShoeCanvas({ product }) {
     return () => observer.disconnect()
   }, [])
 
-  function handlePointerEnter(event) {
-    if (event.pointerType !== 'mouse' || isMobile || reducedMotion) return
-    interactionActive.current = true
-    containerRef.current?.setAttribute('data-interacting', 'true')
-  }
-
-  function handlePointerLeave() {
-    interactionActive.current = false
-    containerRef.current?.removeAttribute('data-interacting')
-  }
-
   return (
     <div
       ref={containerRef}
       className={`shoe-canvas${hasModel ? ' has-model' : ' has-image-fallback'}`}
       aria-hidden="true"
-      onPointerEnter={handlePointerEnter}
-      onPointerLeave={handlePointerLeave}
     >
       {hasModel ? (
         <Canvas
@@ -82,6 +68,7 @@ function ShoeCanvas({ product }) {
                 className="shoe-canvas__figma-shoe"
                 src={assetUrl('images/figma-hero-shoe.png')}
                 alt=""
+                draggable="false"
               />
             </div>
           )}
@@ -92,7 +79,6 @@ function ShoeCanvas({ product }) {
             accentColor={product.accentColor}
             reducedMotion={reducedMotion}
             isMobile={isMobile}
-            interactionActive={interactionActive}
           />
         </Canvas>
       ) : (
@@ -101,6 +87,7 @@ function ShoeCanvas({ product }) {
             className="shoe-canvas__figma-shoe"
             src={assetUrl('images/figma-hero-shoe.png')}
             alt=""
+            draggable="false"
           />
         </div>
       )}

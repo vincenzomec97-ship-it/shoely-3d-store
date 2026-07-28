@@ -94,6 +94,7 @@ function HeroSection() {
 
   function handlePointerMove(event) {
     if (reducedMotion || event.pointerType !== 'mouse' || !stage.current) return
+    if (event.target.closest?.('.shoe-canvas.has-model')) return
 
     const bounds = stage.current.getBoundingClientRect()
     const x = Math.max(-0.5, Math.min(0.5, (event.clientX - bounds.left) / bounds.width - 0.5))

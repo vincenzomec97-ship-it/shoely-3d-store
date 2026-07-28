@@ -1,19 +1,10 @@
 import { RoundedBox } from '@react-three/drei'
-import { useMemo, useRef } from 'react'
+import { useMemo } from 'react'
 import { Shape } from 'three'
-import useShoeMotion from '../../hooks/useShoeMotion.js'
 
 function ShoePlaceholder({
-  reducedMotion,
-  isMobile,
-  interactionActive,
   accentColor = '#ff5a0a',
-  position = [0, 0, 0],
-  rotation = [0, 0, 0],
-  scale = 1,
 }) {
-  const group = useRef()
-
   const upperShape = useMemo(() => {
     const shape = new Shape()
     shape.moveTo(-1.95, -0.38)
@@ -43,22 +34,8 @@ function ShoePlaceholder({
     [],
   )
 
-  useShoeMotion({
-    group,
-    position,
-    rotation,
-    reducedMotion,
-    isMobile,
-    interactionActive,
-  })
-
   return (
-    <group
-      ref={group}
-      position={position}
-      rotation={rotation}
-      scale={scale}
-    >
+    <group>
       <RoundedBox
         args={[4.55, 0.5, 1.3]}
         radius={0.22}
