@@ -6,14 +6,17 @@ funzionante. Il progetto mantiene l'atmosfera del prototipo originale e la
 combina con una scena Three.js predisposta per modelli GLB, interazioni leggere
 e transizioni GSAP.
 
-## Collegamenti
+[Demo online](https://vincenzomec97-ship-it.github.io/shoely-3d-store/) ·
+[Case study](https://vincenzomec97-ship-it.github.io/VinMec-portfolio/projects/shoes-mv/) ·
+[Prototipo Figma](https://www.figma.com/proto/G09Tq8i37addPsCe293DVz/Untitled?node-id=2-2) ·
+[Portfolio](https://vincenzomec97-ship-it.github.io/VinMec-portfolio/) ·
+[Repository](https://github.com/vincenzomec97-ship-it/shoely-3d-store)
 
-- [Demo online](https://vincenzomec97-ship-it.github.io/shoely-3d-store/)
-- [Prototipo Figma Shoes](https://www.figma.com/proto/G09Tq8i37addPsCe293DVz/Untitled?node-id=2-2)
-- [Portfolio](https://vincenzomec97-ship-it.github.io/VinMec-portfolio/)
+> La demo pubblica usa GitHub Pages. Carrello, catalogo e prodotti sono
+> dimostrativi e non effettuano ordini o pagamenti.
 
-> La demo GitHub Pages diventa disponibile dopo il primo deploy del branch
-> `main`.
+**Percorso del progetto:** Concept Figma → Prototipo UI → React → Three.js →
+Demo interattiva.
 
 ## Anteprima
 
@@ -61,6 +64,12 @@ un negozio reale.
 
 Three.js è installato come dipendenza npm. La repository ufficiale non è
 inclusa né clonata nel progetto.
+
+## Ruolo
+
+Implementazione del prototipo Figma, sviluppo React, integrazione Three.js e
+GSAP, responsive design, accessibilità, ottimizzazione della scena e deploy a
+cura di Vincenzo Meccariello.
 
 ## Struttura del progetto
 
@@ -248,6 +257,10 @@ Non vengono dichiarati punteggi Lighthouse, frame rate o tempi di caricamento:
 questi valori dipendono da dispositivo, browser, rete e soprattutto dai modelli
 GLB eventualmente aggiunti.
 
+La build corrente completa correttamente. Vite segnala che il chunk lazy della
+scena 3D supera 500 kB minificati: è un limite noto da affrontare con ulteriore
+code splitting e ottimizzazione dei modelli, senza nasconderlo come metrica positiva.
+
 ## Limitazioni
 
 - Non sono inclusi modelli GLB specifici per i singoli prodotti; in loro
@@ -275,3 +288,14 @@ sono originali. Eventuali riferimenti ad altri siti riguardano esclusivamente
 l'ispirazione tecnica, come fluidità, profondità, uso dello scroll e qualità
 delle transizioni; non implicano la copia di codice, grafica, testi, modelli 3D
 o strutture proprietarie.
+
+## Sviluppi futuri
+
+- modelli GLB distinti e ottimizzati per ogni prodotto;
+- suddivisione più fine del bundle 3D;
+- test prestazionali su dispositivi fisici;
+- catalogo e checkout soltanto dopo l'introduzione di un backend sicuro.
+
+## Autore
+
+**Vincenzo Meccariello** — Junior Frontend Developer & UI/UX Designer.
